@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-2025.css">
+
+<body>
+
+<div class="w3-container">
+  <h1>Using w3-colors-2025</h1>
+  <div class="w3-container w3-2025-brandied-melon">
+    <h1>Nguy Huu Tan-2021050584</h1>
+  </div>
+  <div class="w3-container w3-2025-winterberry">
+    <h1>Winterberry</h1>
+  </div>
+  <div class="w3-container w3-2025-crocus">
+    <h1>Crocus</h1>
+  </div>
+  <div class="w3-container w3-2025-french-roast">
+    <h1>French Roast</h1>
+  </div>
+</div>
+
+</body>
+</html>
