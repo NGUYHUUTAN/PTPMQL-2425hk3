@@ -8,13 +8,9 @@ namespace DemoMVC.Data
     {
         public ApplicationDbcontext(DbContextOptions<ApplicationDbcontext> options) : base(options)
         {}
-        public DbSet<Person> Persons { get; set;}
+        public DbSet<Person> Person { get; set;}
 
-        public static implicit operator ApplicationDbcontext(ApplicationDbContext v)
-        {
-            throw new NotImplementedException();
-        }
+      public DbSet<Studen> Studen { get; set;}
     }
 }
-
 
