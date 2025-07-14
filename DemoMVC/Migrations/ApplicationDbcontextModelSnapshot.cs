@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DemoMVC.Migrations
 {
-    [DbContext(typeof(ApplicationDbcontext))]
+    [DbContext(typeof(ApplicationDbContext))]
     partial class ApplicationDbcontextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
@@ -17,6 +17,22 @@ namespace DemoMVC.Migrations
             modelBuilder.HasAnnotation("ProductVersion", "9.0.6");
 
             modelBuilder.Entity("DemoMVC.Models.Person", b =>
+                {
+                    b.Property<string>("PersonId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Address")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("FullName")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("PersonId");
+
+                    b.ToTable("Persons");
+                });
+
+            modelBuilder.Entity("DemoMVC.Models.Student", b =>
                 {
                     b.Property<string>("PersonId")
                         .HasColumnType("TEXT");
@@ -31,7 +47,7 @@ namespace DemoMVC.Migrations
 
                     b.HasKey("PersonId");
 
-                    b.ToTable("Persons");
+                    b.ToTable("Student");
                 });
 #pragma warning restore 612, 618
         }

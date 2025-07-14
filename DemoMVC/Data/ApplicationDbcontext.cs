@@ -1,16 +1,17 @@
-using DemoMVC.Controllers;
 using DemoMVC.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace DemoMVC.Data
 {
-    public class ApplicationDbcontext : DbContext
+    public class ApplicationDbContext : DbContext
     {
-        public ApplicationDbcontext(DbContextOptions<ApplicationDbcontext> options) : base(options)
-        {}
-        public DbSet<Person> Person { get; set;}
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+            : base(options) { }
 
-      public DbSet<Studen> Studen { get; set;}
+        public DbSet<Student> Student { get; set; }
+        public DbSet<Person> Person { get; set; }
+
+        public DbSet<DaiLy> DaiLy { get; set; }
+        public DbSet<HeThongPhanPhoi> HeThongPhanPhoi { get; set; }
     }
 }
-

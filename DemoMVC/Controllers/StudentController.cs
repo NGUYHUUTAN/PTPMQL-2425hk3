@@ -7,23 +7,25 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DemoMVC.Data;
 using DemoMVC.Models;
-using DemoMVC.Models;
 
 namespace DemoMVC.Controllers
 {
-    public class PersonController : Controller
+    public class StudentController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public PersonController(ApplicationDbContext context)
+        public StudentController(ApplicationDbContext context)
         {
             _context = context;
         }
 
+        // GET: Student
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Person.ToListAsync());
+            return View(await _context.Student.ToListAsync());
         }
+
+        // GET: Student/Details/5
         public async Task<IActionResult> Details(string id)
         {
             if (id == null)
@@ -31,47 +33,39 @@ namespace DemoMVC.Controllers
                 return NotFound();
             }
 
-            var Person = await _context.Person
+            var student = await _context.Student
                 .FirstOrDefaultAsync(m => m.PersonId == id);
-            if (Person == null)
+            if (student == null)
             {
                 return NotFound();
             }
 
-            return View(Person);
+            return View(student);
         }
-        
+
+        // GET: Student/Create
         public IActionResult Create()
         {
-            AutoGenerateId autoGenerateId = new AutoGenerateId();
-            var person = _context.Person.OrderByDescending(s => s.PersonId).FirstOrDefault();
-            var PersonId = person == null ? "St000" : person.PersonId;
-            var newPersonId = autoGenerateId.GenerateId(PersonId);
-
-            var newPerson = new Person
-            {
-                PersonId = newPersonId,
-                FullName = string.Empty
-            };
-
-            return View(newPerson);
+            return View();
         }
 
-   
-
+        // POST: Student/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("FullName,Address")] Person person)
+        public async Task<IActionResult> Create([Bind("PersonId,FullName,Address")] Student student)
         {
             if (ModelState.IsValid)
             {
-                person.PersonId = AutoGenerateId.Generate(_context);
-                _context.Add(person);
+                _context.Add(student);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(person);
+            return View(student);
         }
+
+        // GET: Student/Edit/5
         public async Task<IActionResult> Edit(string id)
         {
             if (id == null)
@@ -79,18 +73,22 @@ namespace DemoMVC.Controllers
                 return NotFound();
             }
 
-            var Person = await _context.Person.FindAsync(id);
-            if (Person == null)
+            var student = await _context.Student.FindAsync(id);
+            if (student == null)
             {
                 return NotFound();
             }
-            return View(Person);
+            return View(student);
         }
+
+        // POST: Student/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("PersonId,FullName,Address")] Person Person)
+        public async Task<IActionResult> Edit(string id, [Bind("PersonId,FullName,Address")] Student student)
         {
-            if (id != Person.PersonId)
+            if (id != student.PersonId)
             {
                 return NotFound();
             }
@@ -99,12 +97,12 @@ namespace DemoMVC.Controllers
             {
                 try
                 {
-                    _context.Update(Person);
+                    _context.Update(student);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!PersonExists(Person.PersonId))
+                    if (!StudentExists(student.PersonId))
                     {
                         return NotFound();
                     }
@@ -115,9 +113,10 @@ namespace DemoMVC.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(Person);
+            return View(student);
         }
 
+        // GET: Student/Delete/5
         public async Task<IActionResult> Delete(string id)
         {
             if (id == null)
@@ -125,33 +124,34 @@ namespace DemoMVC.Controllers
                 return NotFound();
             }
 
-            var Person = await _context.Person
+            var student = await _context.Student
                 .FirstOrDefaultAsync(m => m.PersonId == id);
-            if (Person == null)
+            if (student == null)
             {
                 return NotFound();
             }
 
-            return View(Person);
+            return View(student);
         }
-   
+
+        // POST: Student/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)
         {
-            var Person = await _context.Person.FindAsync(id);
-            if (Person != null)
+            var student = await _context.Student.FindAsync(id);
+            if (student != null)
             {
-                _context.Person.Remove(Person);
+                _context.Student.Remove(student);
             }
 
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool PersonExists(string id)
+        private bool StudentExists(string id)
         {
-            return _context.Person.Any(e => e.PersonId == id);
+            return _context.Student.Any(e => e.PersonId == id);
         }
     }
 }

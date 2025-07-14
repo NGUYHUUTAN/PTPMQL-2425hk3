@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DemoMVC.Migrations
 {
-    [DbContext(typeof(ApplicationDbcontext))]
+    [DbContext(typeof(ApplicationDbContext))]
     [Migration("20250708103711_create_table_Studen")]
     partial class create_table_Studen
     {

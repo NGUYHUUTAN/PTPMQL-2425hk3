@@ -2,9 +2,9 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DemoMVC.Models
-{   
-    [Table("Studen")]
-    public class Studen
+{
+    [Table("Student")]
+    public class Student
     {
         [Key]
         public string PersonId { get; set; }
