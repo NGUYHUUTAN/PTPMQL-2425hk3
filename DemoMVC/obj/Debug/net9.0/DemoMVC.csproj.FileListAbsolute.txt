@@ -361,3 +361,11 @@ C:\Users\Admin\Desktop\PTPMQL-2425hk3\DemoMVC\obj\Debug\net9.0\rjimswa.dswa.cach
 C:\Users\Admin\Desktop\PTPMQL-2425hk3\DemoMVC\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
 C:\Users\Admin\Desktop\PTPMQL-2425hk3\DemoMVC\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
 C:\Users\Admin\Desktop\PTPMQL-2425hk3\DemoMVC\obj\Debug\net9.0\staticwebassets.build.json.cache
+C:\Users\Admin\Desktop\PTPMQL-2425hk3\DemoMVC\bin\Debug\net9.0\EPPlus.dll
+C:\Users\Admin\Desktop\PTPMQL-2425hk3\DemoMVC\bin\Debug\net9.0\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\Admin\Desktop\PTPMQL-2425hk3\DemoMVC\bin\Debug\net9.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Admin\Desktop\PTPMQL-2425hk3\DemoMVC\bin\Debug\net9.0\System.Drawing.Common.dll
+C:\Users\Admin\Desktop\PTPMQL-2425hk3\DemoMVC\bin\Debug\net9.0\System.Xml.XPath.XmlDocument.dll
+C:\Users\Admin\Desktop\PTPMQL-2425hk3\DemoMVC\bin\Debug\net9.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Admin\Desktop\PTPMQL-2425hk3\DemoMVC\bin\Debug\net9.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\Admin\Desktop\PTPMQL-2425hk3\DemoMVC\bin\Debug\net9.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
